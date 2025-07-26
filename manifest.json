@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Transcript Downloader",
+  "version": "1.0",
+  "description": "Download YouTube video transcripts as text files",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
